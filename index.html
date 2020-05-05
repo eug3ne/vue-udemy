@@ -23,6 +23,7 @@
             <h1>Welcome to Udemy 1st class</h1>
             <input type="text" v-on:input="changeTitle">
             <p> {{ title }}</p>
+            <p> {{ sayHello() }}</p>
         </div>
 
         <script>
@@ -34,7 +35,9 @@
                 methods:{
                     changeTitle: function(event){
                         this.title = event.target.value;
-
+                    },
+                    sayHello: function(){
+                        return 'Hello Vue Method';
                     }
                 }
             });
