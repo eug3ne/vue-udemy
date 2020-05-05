@@ -22,8 +22,15 @@
         <div id="app">
             <h1>Welcome to Udemy 1st class</h1>
             <input type="text" v-on:input="changeTitle">
+
+            <!-- This is how we display var using binding-->
             <p> {{ title }}</p>
+
+            <!-- This is how we display 'string' only content using method binding-->
             <p> {{ sayHello() }}</p>
+
+            <!-- This is how we display 'string' value by accessing the data property-->
+            <p> {{ sayHelloWithProperty() }}</p>
         </div>
 
         <script>
@@ -38,6 +45,9 @@
                     },
                     sayHello: function(){
                         return 'Hello Vue Method';
+                    },
+                    sayHelloWithProperty: function(){
+                        return this.title;
                     }
                 }
             });
