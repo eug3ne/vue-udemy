@@ -27,7 +27,13 @@
             <p> {{ title }}</p>
 
             <!-- This is how we display 'string' only content using method binding-->
-            <p> {{ sayHello() }}</p>
+            <p> 
+                {{ sayHello() }}
+                <!-- introduce the Vue directives to bind html attributtes with normal HTMLgit-->
+                <a v-bind:href="link">
+                    Click Me
+                </a>
+            </p>
 
             <!-- This is how we display 'string' value by accessing the data property-->
             <p> {{ sayHelloWithProperty() }}</p>
@@ -37,7 +43,8 @@
             new Vue({
                 el: '#app',
                 data: {
-                    title: 'Hello Eugene'
+                    title: 'Hello Eugene',
+                    link: 'https://google.com'
                 },
                 methods:{
                     changeTitle: function(event){
