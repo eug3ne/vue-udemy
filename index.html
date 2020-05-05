@@ -33,6 +33,8 @@
                 <a v-bind:href="link">
                     Click Me
                 </a>
+                <!-- render raw html using Vue properties and bind mechanism-->
+                <p v-html='htmlTag'></p>
             </p>
 
             <!-- This is how we display 'string' value by accessing the data property-->
@@ -44,7 +46,8 @@
                 el: '#app',
                 data: {
                     title: 'Hello Eugene',
-                    link: 'https://google.com'
+                    link: 'https://google.com',
+                    htmlTag: ' <a href="https://google.com"> Click Me </a>'
                 },
                 methods:{
                     changeTitle: function(event){
